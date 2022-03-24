@@ -88,3 +88,34 @@ let arr2 = [...arr1, 3, 4, 5]; //using spread operator to insert an arr1 inside 
 let arr3 = [6, 7, 8];
 
 arr2.push(...arr3); //using spread operator to concatinate arr2 and arr3
+
+//to create and instantiate an object with defining function
+var animal = {
+    name: "Fred",
+    species: "Dog",
+    age:3,
+    speak: function() {console.log("Woof");}
+}
+
+//passing variable "animal" to a function
+//function doesn't check types - example of ducktyping
+function theAnimalSpeaks(animal) {
+    animal.speak();
+}
+
+theAnimalSpeaks(animal)
+
+//type inference by typescript
+//w/out specifying types, TS inferes what type is each of the parameters
+var animal = {
+    name: "Fred",
+    species: "Dog",
+    age: calculateAge(2019),
+    speak: function() {
+        console.log("Woof");
+    }
+}
+
+function calculateAge(birthYear) {
+    return Date.now() - birthYear;
+}
