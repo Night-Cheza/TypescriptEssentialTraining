@@ -110,3 +110,8 @@ var animal = {
 function calculateAge(birthYear) {
     return Date.now() - birthYear;
 }
+//specifying types explicitly
+function totalLength(x, y) {
+    var total = x.length + y.length;
+    return total;
+}
