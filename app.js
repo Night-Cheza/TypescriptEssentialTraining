@@ -115,3 +115,15 @@ function totalLength(x, y) {
     var total = x.length + y.length;
     return total;
 }
+//union types using | - pipe operator
+function ttlLength(x, y) {
+    var total = x.length + y.length;
+    x.slice(0);
+    if (x instanceof Array) {
+        x.push("abc");
+    }
+    if (typeof x === "string") { //can also use x instanceof String
+        x.substr(1);
+    }
+    return total;
+}
