@@ -127,3 +127,12 @@ function ttlLength(x, y) {
     }
     return total;
 }
+var toDo = {
+    name: "Laundry"
+};
+//assigning function to a variable
+var $ = function (selector) {
+    //Find DOM element
+};
+$.version = 1.12;
+var element = $("#container");

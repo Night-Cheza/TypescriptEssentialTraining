@@ -126,6 +126,9 @@ function totalLength(x: any[], y: string): number {
     return total;
 }
 
+//functions overload
+function ttlLength(x: string, y: string): number
+function ttlLength(x: any[], y: any[]): number
 //union types using | - pipe operator
 function ttlLength(x: (string | any[]), y: (string| any[])): number {
     var total: number = x.length + y.length;
@@ -141,3 +144,36 @@ function ttlLength(x: (string | any[]), y: (string| any[])): number {
     
     return total;
 }
+
+//interfaces
+interface toDo {
+    name: string;
+    completed?: boolean; //? - makes the property being optional
+}
+
+interface toDoService {
+    add(todo: toDo): toDo;
+    getAll(): toDo[];
+    getById(toDoId: number): toDo;
+    delete(toDoId:number): void;
+}
+
+var toDo: toDo = {
+    name: "Laundry"
+};
+
+interface jQuery {
+    (selector:string): HTMLElement;
+    version: number;
+}
+
+//assigning function to a variable
+var $ = <jQuery>function(selector) { //casting function to jQuery type
+    //Find DOM element
+}
+$.version = 1.12;
+var element = $("#container");
+
+
+
+
