@@ -174,6 +174,38 @@ var $ = <jQuery>function(selector) { //casting function to jQuery type
 $.version = 1.12;
 var element = $("#container");
 
+//extending interface:
+//To extend interface to implement custom method, all we need is
+//to create another interface with the same name, and add custom method there.
+//Works well when we work with preexisting interfaces and need to add
+//something specific to it
 
+//enums
+interface toDoList {
+    name: string;
+    state: number;
+}
 
+enum ToDoState {
+    New = 1,
+    Active,
+    Complete,
+    Deleted
+}
 
+var list: toDoList = {
+    name: "Shopping",
+    state: ToDoState.New
+}
+
+function toDelete(todo: toDoList) {
+    if(todo.state != ToDoState.Complete) {
+        throw "Can't delete incomplete task"
+    }
+}
+
+//anonymous types
+function calcLength(x: {length: number}, y: {length: number}): number { //turn on ability to pass any data type that has length property, but still enable to add length of a string to a length of an array (no good)
+    var total: number = x.length + y.length;
+    return total;
+}

@@ -136,3 +136,24 @@ var $ = function (selector) {
 };
 $.version = 1.12;
 var element = $("#container");
+var ToDoState;
+(function (ToDoState) {
+    ToDoState[ToDoState["New"] = 1] = "New";
+    ToDoState[ToDoState["Active"] = 2] = "Active";
+    ToDoState[ToDoState["Complete"] = 3] = "Complete";
+    ToDoState[ToDoState["Deleted"] = 4] = "Deleted";
+})(ToDoState || (ToDoState = {}));
+var list = {
+    name: "Shopping",
+    state: ToDoState.New
+};
+function toDelete(todo) {
+    if (todo.state != ToDoState.Complete) {
+        throw "Can't delete incomplete task";
+    }
+}
+//anonymous types
+function calcLength(x, y) {
+    var total = x.length + y.length;
+    return total;
+}
