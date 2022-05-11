@@ -157,3 +157,21 @@ function calcLength(x, y) {
     var total = x.length + y.length;
     return total;
 }
+//Classes
+// function TodoServ() { //prototypical inheritance: Object.prototype; Array.prototype; Function.prototype
+//     this.todos = [];
+// }
+// TodoServ.prototype.getAll = function() {
+//     return this.todos;
+// }
+var TodoService = /** @class */ (function () {
+    // todos: toDo[] = [];
+    function TodoService(todos) {
+        this.todos = todos;
+        // this.todos = [];
+    }
+    TodoService.prototype.getAll = function () {
+        return this.todos;
+    };
+    return TodoService;
+}());

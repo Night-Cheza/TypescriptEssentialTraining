@@ -209,3 +209,26 @@ function calcLength(x: {length: number}, y: {length: number}): number { //turn o
     var total: number = x.length + y.length;
     return total;
 }
+
+
+//Classes
+// function TodoServ() { //prototypical inheritance: Object.prototype; Array.prototype; Function.prototype
+//     this.todos = [];
+// }
+
+// TodoServ.prototype.getAll = function() {
+//     return this.todos;
+// }
+
+class TodoService {
+
+    // todos: toDo[] = [];
+
+    constructor( private todos: toDo[]) { //alternative way to initialize var and call it (instead of line 225 and line 228)
+        // this.todos = [];
+    }
+
+    getAll() {
+        return this.todos;
+    }
+}
