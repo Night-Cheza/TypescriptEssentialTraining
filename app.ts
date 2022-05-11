@@ -232,3 +232,22 @@ class TodoService {
         return this.todos;
     }
 }
+
+//static variables
+// var lastId = 0; //global variable that is now we have to avoid
+//static variable are better to be avoid. Use them only if a variable has to be unique across all application
+class TobeDone {
+    static lastId: number = 0;
+
+    constructor( private todos: toDo[]) { 
+
+    }
+
+    static getNextId() {
+        return TobeDone.lastId +=1;
+    }
+
+    var(todo: toDo) {
+        var NewId = TobeDone.getNextId();
+    }
+}

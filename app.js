@@ -175,3 +175,19 @@ var TodoService = /** @class */ (function () {
     };
     return TodoService;
 }());
+//static variables
+// var lastId = 0; //global variable that is now we have to avoid
+//static variable are better to be avoid. Use them only if a variable has to be unique across all application
+var TobeDone = /** @class */ (function () {
+    function TobeDone(todos) {
+        this.todos = todos;
+    }
+    TobeDone.getNextId = function () {
+        return TobeDone.lastId += 1;
+    };
+    TobeDone.prototype.var = function (todo) {
+        var NewId = TobeDone.getNextId();
+    };
+    TobeDone.lastId = 0;
+    return TobeDone;
+}());
